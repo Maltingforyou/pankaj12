@@ -1,0 +1,309 @@
+
+
+/*! <----------------------------------1nd MAIN PAGE CSS------------------------------------------------> */
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+  color: #222;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.topics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 900px;
+}
+
+.topic-box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.topic-box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  /* background: conic-gradient(#7a3cff, #f72585, #3a0ca3, #4361ee, #4cc9f0, #7a3cff); */
+  background: conic-gradient(
+    from 0deg,
+    #0f2027,
+    #203a43,
+    #2c5364,
+    #3a0ca3,
+    #4cc9f0,
+    #0f2027
+  );
+
+  animation: rotate 6s linear infinite;
+  z-index: -2;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.topic-box::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: #fff;
+  border-radius: 14px;
+  z-index: -1;
+}
+
+.topic-box:hover::before {
+  opacity: 1;
+}
+
+.topic-box:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 25px rgba(122, 60, 255, 0.5);
+}
+
+.topic-box:hover i {
+  color: #5927b0;
+  transform: rotate(10deg) scale(1.2);
+  text-shadow: 0 0 12px rgba(122, 60, 255, 0.8);
+}
+
+.topic-box i {
+  font-size: 2rem;
+  color: #7a3cff;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.topic-box h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #333;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.topic-box:hover h3 {
+  color: #7a3cff;
+  text-shadow: 0 0 10px rgba(122, 60, 255, 0.6);
+}
+
+.cta-btn {
+  margin-top: 2rem;
+  background: #7a3cff;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  /* cursor: pointer; */
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* .cta-btn:hover {
+  background: #5927b0;
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(122, 60, 255, 0.6);
+} */
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*! <----------------------------------2nd SUBJECT PAGE CSS------------------------------------------------> */
+
+/* background same as hero page */
+
+.subjects {
+  padding: 60px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.subjects h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 30px;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.subjects ul {
+  list-style: decimal;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 900px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.subjects li {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.subjects li:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 0 25px rgba(122, 60, 255, 0.5);
+  /* color: #7a3cff; */
+  background-color: #7a3cff;
+}
+
+/*! <----------------------------------3rd QUESTIONS & MCQ PAGE CSS------------------------------------------------> */
+
+.cont {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 60px 20px;
+}
+
+.cont h2 {
+  font-size: 2.2rem;
+  color: #fff;
+  margin-bottom: 40px;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 800px;
+  width: 100%;
+}
+
+.option-box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.option-box:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 0 25px rgba(122, 60, 255, 0.5);
+  /* color: #7a3cff; */
+  background-color: #7a3cff;
+}
+
+.options a {
+  text-decoration: none;
+}
+
+
+/*! <---------------------------------- 4th chapter page CSS------------------------------------------------> */
+
+ /*  Same body style as previous website */
+    
+      .toc {
+        min-height: 100vh;
+        padding: 60px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: center;
+      }
+
+      .toc h2 {
+        font-size: 2.5rem;
+        color: #fff;
+        margin-bottom: 30px;
+        text-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      }
+
+       .chapters {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1.5rem;
+        max-width: 1200px;
+        width: 100%;
+      }
+
+      /* Chapter box is anchor itself */
+      .chapter-box {
+        display: block;
+        background: #fff;
+        border-radius: 16px;
+        padding: 1.2rem 1.5rem;
+        text-align: left;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: #333;
+        font-size: 1.1rem;
+        font-weight: 500;
+      }
+
+      .chapter-box:hover {
+        cursor: pointer;
+        transform: translateY(-8px) scale(1.03);
+        box-shadow: 0 0 20px rgba(122, 60, 255, 0.5);
+        background: #7a3cff;
+        color: #fff;
+      }
+
+      .chapter-number {
+        font-weight: bold;
+        color: black;
+        margin-right: 8px;
+      }
+
