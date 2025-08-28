@@ -1,131 +1,130 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MCQ Quiz - Pathology</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: "Poppins", sans-serif;
-      background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
-      color: #222;
-      line-height: 1.6;
-    }
-    .quiz {
-      min-height: 100vh;
-      padding: 40px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .quiz h2 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 40px;
-      text-shadow: 0 0 18px rgba(0, 0, 0, 0.3);
-      text-align: center;
-      /* color: #fff;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MCQ Quiz - Pathology</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+        color: #222;
+        line-height: 1.6;
+      }
+      .quiz {
+        min-height: 100vh;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .quiz h2 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 40px;
+        text-shadow: 0 0 18px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        /* color: #fff;
       margin-bottom: 30px;
       text-shadow: 0 0 15px rgba(0, 0, 0, 0.3); */
-    }
-    .question-box {
-      /* background: #fff;
+      }
+      .question-box {
+        /* background: #fff;
       border-radius: 16px;
       padding: 20px;
       margin-bottom: 25px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       max-width: 800px;
       width: 100%; */
-       background: #fff;
-      border-radius: 18px;
-      padding: 28px 24px;
-      margin-bottom: 35px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-      max-width: 900px;
-      width: 100%;
-    }
-    .question-text {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 18px;
-      /* font-size: 1.1rem;
+        background: #fff;
+        border-radius: 18px;
+        padding: 28px 24px;
+        margin-bottom: 35px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        max-width: 900px;
+        width: 100%;
+      }
+      .question-text {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 18px;
+        /* font-size: 1.1rem;
       font-weight: 500;
       margin-bottom: 15px; */
-    }
-    .options {
-      display: grid;
-      gap: 14px;
-    }
-    .option {
+      }
+      .options {
+        display: grid;
+        gap: 14px;
+      }
+      .option {
         background: #fff;
-      border-radius: 14px;
-      padding: 14px 16px;
-      font-size: 1.05rem;
-      font-weight: 500;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      cursor: pointer;
-      transition: all 0.25s ease;
-      user-select: none;
-      /* background: #fff;
+        border-radius: 14px;
+        padding: 14px 16px;
+        font-size: 1.05rem;
+        font-weight: 500;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        cursor: pointer;
+        transition: all 0.25s ease;
+        user-select: none;
+        /* background: #fff;
       border-radius: 12px;
       padding: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       cursor: pointer;
       transition: all 0.3s ease; */
-    }
-    .option:hover {
-      transform: translateY(-2px) scale(1.02);
-      box-shadow: 0 0 18px rgba(122, 60, 255, 0.5);
-      /* transform: scale(1.02);
+      }
+      .option:hover {
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 0 18px rgba(122, 60, 255, 0.5);
+        /* transform: scale(1.02);
       box-shadow: 0 0 15px rgba(122, 60, 255, 0.5); */
-    }
-    .option.correct {
-      background: rgba(0, 200, 0, 0.18);
-      border: 2px solid green;
-      color: green;
-      font-weight: 600;
-      /* background: rgba(0, 200, 0, 0.2);
+      }
+      .option.correct {
+        background: rgba(0, 200, 0, 0.18);
+        border: 2px solid green;
+        color: green;
+        font-weight: 600;
+        /* background: rgba(0, 200, 0, 0.2);
       border: 2px solid green;
       color: green; */
-    }
-    .option.wrong {
-       background: rgba(255, 0, 0, 0.18);
-      border: 2px solid red;
-      color: red;
-      font-weight: 600;
-      /* background: rgba(255, 0, 0, 0.2);
+      }
+      .option.wrong {
+        background: rgba(255, 0, 0, 0.18);
+        border: 2px solid red;
+        color: red;
+        font-weight: 600;
+        /* background: rgba(255, 0, 0, 0.2);
       border: 2px solid red;
       color: red; */
-    }
-    .explanation {
-      margin-top: 12px;
-      padding: 12px;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.9);
-      display: none;
-      font-size: 0.95rem;
-      /* margin-top: 15px;
+      }
+      .explanation {
+        margin-top: 12px;
+        padding: 12px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.9);
+        display: none;
+        font-size: 0.95rem;
+        /* margin-top: 15px;
       padding: 12px;
       border-radius: 10px;
       background: rgba(255, 255, 255, 0.8);
       display: none; */
-    }
-    .show-exp-btn {
-      margin-top: 15px;
-       padding: 10px 18px;
-      border: none;
-      border-radius: 10px;
-      background: #7a3cff;
-      color: #fff;
-      font-size: 0.95rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: 0.25s;
+      }
+      .show-exp-btn {
+        margin-top: 15px;
+        padding: 10px 18px;
+        border: none;
+        border-radius: 10px;
+        background: #7a3cff;
+        color: #fff;
+        font-size: 0.95rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: 0.25s;
 
-      /* margin-top: 10px;
+        /* margin-top: 10px;
       padding: 8px 15px;
       border: none;
       border-radius: 8px;
@@ -134,141 +133,195 @@
       cursor: pointer;
       transition: 0.3s;
       display: none; */
-    }
-    .show-exp-btn:hover {
-      background: #5927b0;
-    }
-  </style>
-</head>
-<body>
-  <section class="quiz">
-    <h2>MCQ Practice (30 Questions)</h2>
-    <div id="quiz-container"></div>
-  </section>
+      }
+      .show-exp-btn:hover {
+        background: #5927b0;
+      }
 
-  <script>
-    const quizData = [
-      {
-        q: "1. Differential expression of a gene depending upon the parent of origin is a feature of:",
-        options: ["A. Gonadal mosaicism","B. Genomic imprinting","C. Anticipation","D. Incomplete penetrance"],
-        correct: 1,
-        exp: "Genomic imprinting regulates gene expression based on parental origin."
-      },
-      {
-        q: "2. Which of the options listed below is not included as a constituent of Papanicolaou stain?",
-        options: ["A. Light green SF","B. Orange G","C. Eosin B","D. Hematoxylin"],
-        correct: 2,
-        exp: "Pap stain includes Light Green SF, Orange G, and Hematoxylin. Eosin B is not a component."
-      },
-      {
-        q: "3. Mechanism of healing in a scalp swelling with pus discharge:",
-        options: ["A. Granuloma formation","B. Scab formation","C. Granulation tissue","D. Neovascularization"],
-        correct: 2,
-        exp: "Healing occurs by granulation tissue (fibroblasts + angiogenesis)."
-      },
-      {
-        q: "4. Telomerase theory of ageing – correct statement:",
-        options: ["A. Telomere stability is associated with ageing","B. Abnormal telomerase activation is associated with ageing","C. Decreased telomere length is associated with ageing","D. Increased telomere length is associated with ageing"],
-        correct: 2,
-        exp: "Ageing is linked to progressive shortening of telomeres."
-      },
-      {
-        q: "5. Which measure is associated with increased life span?",
-        options: ["A. Regular exercise","B. Decrease stress","C. Decreasing calorie intake by 30%","D. Proton pump inhibitors"],
-        correct: 2,
-        exp: "Calorie restriction increases longevity."
-      },
-      {
-        q: "6. A 35-year-old female with thyroid swelling, biopsy shows amyloid: which stain will confirm?",
-        options: ["A. PAS","B. Congo red","C. Masson's trichrome","D. Silver stain"],
-        correct: 1,
-        exp: "Congo red stain confirms amyloid deposition."
-      },
-      {
-        q: "7. Familial hypercholesterolemia is due to mutation in:",
-        options: ["A. LDL receptor","B. ApoE","C. ApoA-I","D. LCAT"],
-        correct: 0,
-        exp: "Mutation of LDL receptor gene causes familial hypercholesterolemia."
-      },
-      {
-        q: "8. Tumor suppressor gene mutated in Retinoblastoma:",
-        options: ["A. RB","B. p53","C. APC","D. NF1"],
-        correct: 0,
-        exp: "RB1 gene mutation causes retinoblastoma."
-      },
-      {
-        q: "9. Philadelphia chromosome t(9;22) is seen in:",
-        options: ["A. AML","B. CLL","C. CML","D. ALL"],
-        correct: 2,
-        exp: "CML is classically associated with Philadelphia chromosome."
-      },
-      {
-        q: "10. Most radiosensitive phase of cell cycle:",
-        options: ["A. G0","B. G1","C. S","D. M"],
-        correct: 3,
-        exp: "M phase is most radiosensitive."
-      },
-      {
-         q: "11. i am dheeraj,guess my age",
-        options: ["A. 15","B. 78","C. 23","D. 32"],
-        correct: 2,
-        exp: "You are genius"
-      },
-      // ⚡ Continue adding Q11 – Q30 in same format
-    ];
+      .explanation {
+        white-space: pre-line;
+        font-size: 15px;
+        line-height: 1.5;
+        /* margin-top: 10px;
+        color: green; */
+      }
+    </style>
+  </head>
+  <body>
+    <section class="quiz">
+      <h2>MCQ Practice (30 Questions)</h2>
+      <div id="quiz-container"></div>
+      <div id="explanation" class="explanation"></div>
+    </section>
 
-    const container = document.getElementById("quiz-container");
+    <script>
+      const quizData = [
+        {
+          q: "1. Differential expression of a gene depending upon the parent of origin is a feature of:",
+          options: [
+            "A. Gonadal mosaicism",
+            "B. Genomic imprinting",
+            "C. Anticipation",
+            "D. Incomplete penetrance",
+          ],
+          correct: 1,
+          exp: `• Genomic imprinting is the regulation of genes whose expression depends on whether they are maternally or paternally inherited \n
+          Incorrect Options: \n
+          Option A - Gonadal mosaicism: It refers to the phenomenon where different cells in the gonads of an individual have different genetic makeups. This can result in offspring with genetic abnormalities even if the parents do not have them. \n
+          Option C - Anticipation: It is a phenomenon where genetic disorders manifest at an earlier age and with more severe symptoms in successive generations due to the expansion of unstable trinucleotide repeats.\n
+          Option D - Incomplete penetrance: It refers to the phenomenon where individuals with the same genetic mutation do not necessarily express the corresponding phenotype. This can be due to environmental or other genetic factors that modify the expression of the gene`,
+        },
+        {
+          q: "2. Which of the options listed below is not included as a constituent of Papanicolaou stain?",
+          options: [
+            "A. Light green SF",
+            "B. Orange G",
+            "C. Eosin B",
+            "D. Hematoxylin",
+          ],
+          correct: 2,
+          exp: `• Eosin B is a counterstain that stains the cytoplasmic components of cells pink or red. It provides
+                additional contrast and helps distinguish cell boundaries.\n
+                • Papanicolaou stain, commonly known as the Pap stain, is a special stain used in cytology to differentiate cells and identify abnormalities, particularly in Pap smears for cervical cancer screening.\n
+                • In the context of the Pap stain, it is not used; instead, the stain relies on the specific combination of
+                light green SF, orange G, and Hematoxylin for cell staining.\n
+                Incorrect Option:\n
+                Option A: Light green SF: This is a counterstain used in the Pap stain. It stains the cytoplasm of cells and helps visualize cell morphology.\n
+                Option B: Orange G: Orange G is another counterstain used in the Pap stain. It stains the cytoplasm as well and enhances the contrast of the stained cells.\n
+                Option D: Hematoxylin: Hematoxylin is a component of the Papanicolaou stain. Hematoxylin is a nuclear stain that is often used in combination with eosin (Hematoxylin and Eosin stain, or H&E; stain) to stain cell nuclei blue-purple.`,
+        },
+        {
+          q: "3.  What is the mechanism for healing in the case of a 57-year-old male with a gradually developing swelling over the scalp region,plus discharge,and pain?",
+          options: [
+            "A. Granuloma formation",
+            "B. Scab formation",
+            "C. Granulation tissue",
+            "D. Neovascularization",
+          ],
+          correct: 2,
+          exp: "Healing occurs by granulation tissue (fibroblasts + angiogenesis).",
+        },
+        {
+          q: "4. Telomerase theory of ageing – correct statement:",
+          options: [
+            "A. Telomere stability is associated with ageing",
+            "B. Abnormal telomerase activation is associated with ageing",
+            "C. Decreased telomere length is associated with ageing",
+            "D. Increased telomere length is associated with ageing",
+          ],
+          correct: 2,
+          exp: "Ageing is linked to progressive shortening of telomeres.",
+        },
+        {
+          q: "5. Which measure is associated with increased life span?",
+          options: [
+            "A. Regular exercise",
+            "B. Decrease stress",
+            "C. Decreasing calorie intake by 30%",
+            "D. Proton pump inhibitors",
+          ],
+          correct: 2,
+          exp: "Calorie restriction increases longevity.",
+        },
+        {
+          q: "6. A 35-year-old female with thyroid swelling, biopsy shows amyloid: which stain will confirm?",
+          options: [
+            "A. PAS",
+            "B. Congo red",
+            "C. Masson's trichrome",
+            "D. Silver stain",
+          ],
+          correct: 1,
+          exp: "Congo red stain confirms amyloid deposition.",
+        },
+        {
+          q: "7. Familial hypercholesterolemia is due to mutation in:",
+          options: ["A. LDL receptor", "B. ApoE", "C. ApoA-I", "D. LCAT"],
+          correct: 0,
+          exp: "Mutation of LDL receptor gene causes familial hypercholesterolemia.",
+        },
+        {
+          q: "8. Tumor suppressor gene mutated in Retinoblastoma:",
+          options: ["A. RB", "B. p53", "C. APC", "D. NF1"],
+          correct: 0,
+          exp: "RB1 gene mutation causes retinoblastoma.",
+        },
+        {
+          q: "9. Philadelphia chromosome t(9;22) is seen in:",
+          options: ["A. AML", "B. CLL", "C. CML", "D. ALL"],
+          correct: 2,
+          exp: "CML is classically associated with Philadelphia chromosome.",
+        },
+        {
+          q: "10. Most radiosensitive phase of cell cycle:",
+          options: ["A. G0", "B. G1", "C. S", "D. M"],
+          correct: 3,
+          exp: "M phase is most radiosensitive.",
+        },
+        {
+          q: "11. i am dheeraj,guess my age",
+          options: ["A. 15", "B. 78", "C. 23", "D. 32"],
+          correct: 2,
+          exp: "You are genius",
+        },
+        // ⚡ Continue adding Q11 – Q30 in same format
+      ];
 
-    quizData.forEach((item, index) => {
-      const box = document.createElement("div");
-      box.className = "question-box";
+      const container = document.getElementById("quiz-container");
+      document.getElementById("explanation").innerText = quizData[0].exp;
 
-      const qText = document.createElement("div");
-      qText.className = "question-text";
-      qText.textContent = item.q;
-      box.appendChild(qText);
 
-      const opts = document.createElement("div");
-      opts.className = "options";
+      quizData.forEach((item, index) => {
+        const box = document.createElement("div");
+        box.className = "question-box";
 
-      item.options.forEach((opt, i) => {
-        const btn = document.createElement("div");
-        btn.className = "option";
-        btn.textContent = opt;
-        btn.dataset.correct = (i === item.correct);
-        btn.addEventListener("click", () => {
-          [...opts.children].forEach(o => o.style.pointerEvents = "none");
-          if (i === item.correct) {
-            btn.classList.add("correct");
-          } else {
-            btn.classList.add("wrong");
-            [...opts.children][item.correct].classList.add("correct");
-          }
-          expBtn.style.display = "inline-block";
+        const qText = document.createElement("div");
+        qText.className = "question-text";
+        qText.textContent = item.q;
+        box.appendChild(qText);
+
+        const opts = document.createElement("div");
+        opts.className = "options";
+
+        item.options.forEach((opt, i) => {
+          const btn = document.createElement("div");
+          btn.className = "option";
+          btn.textContent = opt;
+          btn.dataset.correct = i === item.correct;
+          btn.addEventListener("click", () => {
+            [...opts.children].forEach((o) => (o.style.pointerEvents = "none"));
+            if (i === item.correct) {
+              btn.classList.add("correct");
+            } else {
+              btn.classList.add("wrong");
+              [...opts.children][item.correct].classList.add("correct");
+            }
+            expBtn.style.display = "inline-block";
+          });
+          opts.appendChild(btn);
         });
-        opts.appendChild(btn);
+        box.appendChild(opts);
+
+        const expBtn = document.createElement("button");
+        expBtn.className = "show-exp-btn";
+        expBtn.textContent = "See Explanation";
+        const expDiv = document.createElement("div");
+        expDiv.className = "explanation";
+        expDiv.innerHTML = "<strong>Explanation:</strong> " + item.exp;
+
+        expBtn.addEventListener("click", () => {
+          expDiv.style.display = "block";
+          expBtn.style.display = "none";
+        });
+
+        box.appendChild(expBtn);
+        box.appendChild(expDiv);
+
+        container.appendChild(box);
       });
-      box.appendChild(opts);
-
-      const expBtn = document.createElement("button");
-      expBtn.className = "show-exp-btn";
-      expBtn.textContent = "See Explanation";
-      const expDiv = document.createElement("div");
-      expDiv.className = "explanation";
-      expDiv.innerHTML = "<strong>Explanation:</strong> " + item.exp;
-
-      expBtn.addEventListener("click", () => {
-        expDiv.style.display = "block";
-        expBtn.style.display = "none";
-      });
-
-      box.appendChild(expBtn);
-      box.appendChild(expDiv);
-
-      container.appendChild(box);
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>
+
 
 
