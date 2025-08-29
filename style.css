@@ -149,6 +149,25 @@ body {
   }
 }
 
+/* Footer */
+.site-footer {
+  background: rgba(20, 20, 35, 0.8); /* Dark glass effect */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ccc;
+  text-align: center;
+  padding: 5px 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+}
+
+.site-footer p {
+  margin: 5px 0;
+  color: #aaa;
+  letter-spacing: 0.4px;
+}
+
 /*! <----------------------------------2nd SUBJECT PAGE CSS------------------------------------------------> */
 
 /* background same as hero page */
@@ -306,4 +325,5 @@ body {
         color: black;
         margin-right: 8px;
       }
+
 
