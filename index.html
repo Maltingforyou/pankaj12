@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <title>New World - Home</title> -->
     <title>MedGrowHub</title>
     <link rel="icon" href="images/website_icon.jpg">
     <link
@@ -14,10 +13,10 @@
   </head>
   <body>
     <section class="hero">
-      <h1>Welcome to the New World!</h1>
+          <h1>Welcome to <span style="color:#2e86de;">MedGrowHub</span>!</h1>
       <p>Where growth is priority</p>
       <button class="cta-btn">
-        Let's Jump into
+      Explore Resources
         <i class="fa-solid fa-arrow-right"></i></button
       ><br />
       <div class="topics">
@@ -41,8 +40,18 @@
         </div>
       </div>
     </section>
+      <footer class="site-footer">
+    <div class="footer-content">
+      <p>&copy; <span id="year"></span> MedGrowHub — Where growth is priority.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
   </body>
 </html>
+
 
 
 
